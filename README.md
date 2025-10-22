@@ -23,7 +23,7 @@ The core model is a 1D Transformer-based architecture, combining convolutional l
 [1] F. Greifeneder, C. Notarnicola, and W. Wagner, “A machine learning-based approach for surface soil moisture estimations with google earth engine,” Remote Sensing, vol. 13, no. 11, p. 2099, 2021.
 
 ## Installation
-- git clone https://github.com/abhisheksinghIN/TransConvRegressor.git
+- gh repo clone Eurac-Research-Institute-for-EO/TransConvRegressor
 - cd TransConvRegressor
 - pip install -r requirements.txt
 
