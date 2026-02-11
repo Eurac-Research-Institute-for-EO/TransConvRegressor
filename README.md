@@ -29,12 +29,22 @@ The core model is a 1D Transformer-based architecture, combining convolutional l
 
 ## Training, Validation and Test
 python train.py
-- This will initiate the training process, including data preprocessing, model training, and validation.
+- This will initiate the training process, including data preprocessing, model training, validation and test.
+- Comparison of scatter plot between predicted LAI and S2-LAI on the test set
+<img width="5280" height="3032" alt="image" src="https://github.com/user-attachments/assets/8da11491-d632-46d1-8262-9b13b40e0042" />
+- Comparison of box plot between predicted LAI and S2-LAI on the test sets during the growing season on the test set.
+<img width="4023" height="2216" alt="image" src="https://github.com/user-attachments/assets/4d63ceeb-7b0d-41ba-812b-e94664a5fd05" />
+
 
 ## Prediction
 python prediction.py
 - This script loads the trained model, performs inference on the test data, and saves the predicted LAI values along with additional information to CSV files.
-- 
-<img width="3876" height="2071" alt="image" src="https://github.com/user-attachments/assets/3dcfb8f6-7d3e-4c62-8eed-91dad10f5d5b" />
+- (a) Predicted LAI vs S2-LAI in one of the unseen field sites in Fondo F1 (Trento), (b) Trend of gap-filled LAI with Sentinel-2 LAI in Fondo - F1(Trento)
+  
+<img width="4986" height="2407" alt="image" src="https://github.com/user-attachments/assets/2c4577b9-23a2-424e-aa0c-ebaa20bff296" />
+
+
+## Link to the Paper
+[Link](https://ieeexplore.ieee.org/document/11303207)
 
 
