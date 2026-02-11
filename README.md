@@ -46,5 +46,9 @@ python prediction.py
 
 ## Link to the Paper
 [Link](https://ieeexplore.ieee.org/document/11303207)
+- Cite this paper:
+A. Singh et al., "A Transformer-based Convolutional Regressor to include SAR Backscatter Signals in Monitoring Alpine Grasslands," in IEEE Geoscience and Remote Sensing Letters, doi: 10.1109/LGRS.2025.3645675.
+
+
 
 
