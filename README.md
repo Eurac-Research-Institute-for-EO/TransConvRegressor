@@ -30,6 +30,7 @@ The core model is a 1D Transformer-based architecture, combining convolutional l
 ## Training, Validation and Test
 python train.py
 - This will initiate the training process, including data preprocessing, model training, validation and test.
+# Analysis of the trained model on the test set
 - Comparison of scatter plot between predicted LAI and S2-LAI on the test set
 <img width="5280" height="3032" alt="image" src="https://github.com/user-attachments/assets/8da11491-d632-46d1-8262-9b13b40e0042" />
 - Comparison of box plot between predicted LAI and S2-LAI on the test sets during the growing season on the test set.
