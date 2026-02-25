@@ -23,12 +23,7 @@ os.makedirs(path_exp, exist_ok=True)
 
 # --------------------------- Load Data ---------------------------
 # Note: this follows your original script closely and preserves the dropped columns
-df_ = pd.read_csv(filename_database, sep='\t').drop([
-    "Unnamed: 0", 'RTC_dsc_RVI', 'RTC_dsc_ratio', 'RTC_dsc_sum', 'RTC_dsc_diff', 'RTC_dsc_prod',
-    'RTC_dsc_VH_prod', 'RTC_dsc_sum_prod', 'RTC_dsc_square_diff', 'RTC_asc_RVI',
-    'RTC_asc_ratio', 'RTC_asc_sum', 'RTC_asc_diff', 'RTC_asc_prod', 'RTC_asc_VH_prod',
-    'RTC_asc_sum_prod', 'RTC_asc_square_diff'
-], axis=1)
+df_ = pd.read_csv(filename_database, sep=','), axis=1)
 
 # ************************************************** Preprocessing **************************************************
 df_['doy_sin'] = np.sin(2 * np.pi * df_['doy'] / 365)
@@ -356,4 +351,5 @@ boxplot_fig.tight_layout()
 boxplot_fig.savefig(boxplot_file, dpi=300)
 print(f"Date-wise boxplot saved to {boxplot_file}")
 plt.close(boxplot_fig)
+
 
