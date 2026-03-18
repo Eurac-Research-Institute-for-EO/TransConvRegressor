@@ -18,7 +18,7 @@ The core model is a 1D Transformer-based architecture, combining convolutional l
 - S1 SAR (RTC): We downloaded the S1 RTC from the Microsoft Planetary Computer as netcdfs. RTC is radiometrically terrain corrected GRD data, to account for radiometrics effects resulting from the topography.
 - Sentinel-2 derived LAI: We computed LAI from the S2 L2A files over selected years and tiles using the SNAP Biophysical Processor.
 - Soil Moisture: We considered Surface Soil Moisture based on a combination of SAR and optical imagery [1]. We simulated the required soil moisture data over the AOI.
-- Topographical Classes: Type of meadows are selected from LAFIS data. We have only considered colline, submontane, montane and subalpine for this study because most of managed grasslands is in this elevation range.
+- Topographical Classes: Type of meadows are selected from LAFIS data. We have only considered colline, submontane, montane and subalpine (e.g. S_coll, N_coll, S_submont, N_submont, S_mont, N_mont, S_subalp, N_subalp) split into south and north facing meadows for this study.
 - AOI: LAFIS Grasslands over South Tyrol (Italy)
 [1] F. Greifeneder, C. Notarnicola, and W. Wagner, “A machine learning-based approach for surface soil moisture estimations with google earth engine,” Remote Sensing, vol. 13, no. 11, p. 2099, 2021.
 
@@ -30,6 +30,10 @@ The core model is a 1D Transformer-based architecture, combining convolutional l
 ## Training, Validation and Test
 python train.py
 - This will initiate the training process, including data preprocessing, model training, validation and test.
+- We used a CSV dataset containing Sentinel‑1 RTC features, soil moisture information, altitudinal classes and target S2 LAI for training and validation, which can be summarized as follows:
+<img width="521" height="104" alt="image" src="https://github.com/user-attachments/assets/655a9ef6-d7bf-4818-89a3-97af202483a4" />
+
+
 # Analysis of the trained model on the test set
 - Comparison of scatter plot between predicted LAI and S2-LAI on the test set
 <img width="5280" height="3032" alt="image" src="https://github.com/user-attachments/assets/8da11491-d632-46d1-8262-9b13b40e0042" />
@@ -40,6 +44,9 @@ python train.py
 ## Prediction
 python prediction.py
 - This script loads the trained model, performs inference on the test data, and saves the predicted LAI values along with additional information to CSV files.
+- We used a CSV dataset containing Sentinel‑1 RTC features, soil moisture information and altitudinal classes for prediction on unseen sites, which can be summarized as follows:
+<img width="494" height="92" alt="image" src="https://github.com/user-attachments/assets/ab71c4e1-49c2-47f4-a4f5-8a49c65cef42" />
+
 - (a) Predicted LAI vs S2-LAI in one of the unseen field sites in Fondo F1 (Trento), (b) Trend of gap-filled LAI with Sentinel-2 LAI in Fondo - F1(Trento)
   
 <img width="4986" height="2407" alt="image" src="https://github.com/user-attachments/assets/2c4577b9-23a2-424e-aa0c-ebaa20bff296" />
